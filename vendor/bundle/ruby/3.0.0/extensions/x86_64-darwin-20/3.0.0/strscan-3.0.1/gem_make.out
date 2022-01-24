@@ -1,0 +1,16 @@
+current directory: /Users/ravilodhi/Desktop/workspace/beta_blog/vendor/bundle/ruby/3.0.0/gems/strscan-3.0.1/ext/strscan
+/Users/ravilodhi/.rvm/rubies/ruby-3.0.0/bin/ruby -I /Users/ravilodhi/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0 -r ./siteconf20220124-59476-vdqqid.rb extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/ravilodhi/Desktop/workspace/beta_blog/vendor/bundle/ruby/3.0.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR=" clean
+
+current directory: /Users/ravilodhi/Desktop/workspace/beta_blog/vendor/bundle/ruby/3.0.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR="
+compiling strscan.c
+linking shared-object strscan.bundle
+
+current directory: /Users/ravilodhi/Desktop/workspace/beta_blog/vendor/bundle/ruby/3.0.0/gems/strscan-3.0.1/ext/strscan
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 strscan.bundle ./.gem.20220124-59476-vud4bi

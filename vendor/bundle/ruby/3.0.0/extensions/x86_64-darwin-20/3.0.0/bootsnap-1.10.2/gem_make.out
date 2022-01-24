@@ -1,0 +1,15 @@
+current directory: /Users/ravilodhi/Desktop/workspace/beta_blog/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.10.2/ext/bootsnap
+/Users/ravilodhi/.rvm/rubies/ruby-3.0.0/bin/ruby -I /Users/ravilodhi/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0 -r ./siteconf20220124-59476-j49hq6.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ravilodhi/Desktop/workspace/beta_blog/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.10.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/ravilodhi/Desktop/workspace/beta_blog/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.10.2/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/ravilodhi/Desktop/workspace/beta_blog/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.10.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20220124-59476-nvbt2e/bootsnap
