@@ -1,9 +1,21 @@
-<%= form_for(@article) do |f| %>
-  <%= f.label :title %><br/>
-  <%= f.text_field :title %><br/>
+<div class="container card p-4" style="max-width: 800px;">
+  <%= form_for(@article) do |f| %>
+  <%= f.label :title, class: 'form-label' %><br/>
+  <%= f.text_field :title, class: 'form-control' %><br/>
 
-  <%= f.label :description %><br/>
-  <%= f.text_area :description %><br/>
+  <%= f.label :description, class: 'form-label'  %><br/>
+  <%= f.text_area :description, class: 'form-control' %><br/>
 
-  <%= f.submit %>
-<% end %>
+  <% if params[:id].present? %>
+      <%= f.submit 'Update article', class: 'btn btn-primary' %>
+      <%= link_to 'Delete', articles_delete_path(@article), class: 'btn btn-danger', data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
+    <% else %>
+    <%= f.submit 'Create article', class: 'btn btn-primary' %>
+  <% end %>
+
+  <%= link_to 'Cancel', articles_path, class: 'btn btn-dark' %>
+  <% end %>
+</div>

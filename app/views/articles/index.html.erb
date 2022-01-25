@@ -1,35 +1,31 @@
-Articles Page
+<div class="text-center bg-dark text-white" style="height: 200px; display: grid; place-content: center;">
+  <h1>Welcome to Beta Blog!</h1>
+</div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="2">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article| %>
+<div class="container">
+  <%= link_to 'New', new_article_path, class: 'btn btn-dark my-2', style: 'float: right' %>
+  <table class="table table-bordered">
+    <thead>
       <tr>
-        <td><%= link_to article.title, article %></td>
-        <td><%= article.description %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Delete', article_path(article), method: :delete, data: {
-          turbo_method: :delete,
-          turbo_confirm: "Are you sure?"
-        } %></td>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>Welcome, this is the home page</h1>
-
-<button type="button"
-        class="btn btn-lg btn-danger"
-        data-bs-toggle="popover"
-        title="Popover title"
-        data-bs-content="Amazing content, right ?">
-  Click to toggle popover
-</button>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= link_to article.title, article %></td>
+          <td style="max-width: 600px;">
+            <p style="max-height: 40px; overflow: hidden;"><%= article.description %></p>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-success' %>
+            <%= link_to 'Delete', articles_delete_path(article), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure"} %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
