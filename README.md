@@ -1,24 +1,12 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+# BETA BLOG
 
 * Ruby version
+```ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-darwin20]```
 
-* System dependencies
+* Rails version
+```Rails 7.0.1```
 
-* Configuration
+* Database
+```PostgresQL```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Live Preview URL: https://frozen-bastion-66085.herokuapp.com/
