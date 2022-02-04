@@ -1,4 +1,4 @@
-<% if @user.errors.full_messages.length > 0 %>
+<% if @user.errors.any? %>
   <ul>
     <% @user.errors.full_messages.each do |error| %>
       <li><%= error %></li>
@@ -17,11 +17,7 @@
   <%= f.label :password, class: 'form-label'  %><br/>
   <%= f.password_field :password, class: 'form-control' %><br/>
 
-  <% if params[:id].present? %>
-      <%= f.submit 'Update user', class: 'btn btn-primary' %>
-    <% else %>
-    <%= f.submit 'Sign up', class: 'btn btn-primary' %>
-  <% end %>
+  <%= f.submit(@user.new_record? ? 'Sign up' : 'Update account', class: 'btn btn-primary') %>
 
   <%= link_to 'Cancel', root_path, class: 'btn btn-dark' %>
   <% end %>
