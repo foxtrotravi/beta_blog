@@ -1,0 +1,32 @@
+<% if @user.errors.full_messages.length > 0 %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="container card p-4" style="max-width: 800px;">
+  <%= form_for(@user) do |f| %>
+  <%= f.label :username, class: 'form-label' %><br/>
+  <%= f.text_field :username, class: 'form-control' %><br/>
+
+  <%= f.label :email, class: 'form-label'  %><br/>
+  <%= f.email_field :email, class: 'form-control' %><br/>
+
+  <%= f.label :password, class: 'form-label'  %><br/>
+  <%= f.password_field :password, class: 'form-control' %><br/>
+
+  <% if params[:id].present? %>
+      <%= f.submit 'Update user', class: 'btn btn-primary' %>
+      <%= link_to 'Delete', articles_delete_path(@user), class: 'btn btn-danger', data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
+    <% else %>
+    <%= f.submit 'Sign up', class: 'btn btn-primary' %>
+  <% end %>
+
+  <%= link_to 'Cancel', articles_path, class: 'btn btn-dark' %>
+  <% end %>
+</div>
