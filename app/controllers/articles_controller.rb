@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params.require(:article).permit(:title, :description))
+    @article.user_id = User.first.id
     if @article.save
       flash[:notice] = 'Article saved successfully'
       redirect_to article_path(@article)
@@ -27,6 +28,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = 'Article updated successfully'
       redirect_to article_path(@article)
     else
+      flash[:error] = @article.errors.full_messages
       render 'edit'
     end
   end

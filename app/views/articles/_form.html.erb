@@ -1,3 +1,11 @@
+<% if @article.errors.full_messages.length > 0 %>
+  <ul>
+    <% @article.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <div class="container card p-4" style="max-width: 800px;">
   <%= form_for(@article) do |f| %>
   <%= f.label :title, class: 'form-label' %><br/>

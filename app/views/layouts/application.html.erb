@@ -12,6 +12,10 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| %>
+      <%= msg %>
+    <% end %>
+    
     <%= yield %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
