@@ -4,28 +4,6 @@
 
 <div class="container">
   <%= link_to 'New', new_article_path, class: 'btn btn-dark my-2', style: 'float: right' %>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @articles.each do |article| %>
-        <tr>
-          <td><%= link_to article.title, article %></td>
-          <td style="max-width: 600px;">
-            <p style="max-height: 40px; overflow: hidden;"><%= article.description %></p>
-          </td>
-          <td>
-            <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-success' %>
-            <%= link_to 'Delete', articles_delete_path(article), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure"} %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render 'article' %>
 </div>
 
