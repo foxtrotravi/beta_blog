@@ -19,14 +19,10 @@
 
   <% if params[:id].present? %>
       <%= f.submit 'Update user', class: 'btn btn-primary' %>
-      <%= link_to 'Delete', articles_delete_path(@user), class: 'btn btn-danger', data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-      } %>
     <% else %>
     <%= f.submit 'Sign up', class: 'btn btn-primary' %>
   <% end %>
 
-  <%= link_to 'Cancel', articles_path, class: 'btn btn-dark' %>
+  <%= link_to 'Cancel', root_path, class: 'btn btn-dark' %>
   <% end %>
 </div>
